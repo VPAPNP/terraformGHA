@@ -4,7 +4,17 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "3.113.0"
     }
+    
+    
   }
+  backend "azurerm" {
+    resource_group_name   = "storageStateFile"
+    storage_account_name  = "taskboardstoragevasil"
+    container_name        = "taskboradstoragevasil"
+    key                   = "terraform.tfstate"
+    
+  }
+
 
 }
 
